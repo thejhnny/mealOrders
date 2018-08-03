@@ -9,7 +9,7 @@ class Home extends Component{
         <img src={eugene} alt="picture here"/>
         <hr/>
         <h2>Follow me on IG!</h2>
-        <a href="https://www.instagram.com/you_jean_cooks/"><img  class="ig" src={ig} alt=""/></a>
+        <a href="https://www.instagram.com/you_jean_cooks/"><img  className="ig" src={ig} alt=""/></a>
       </div>
     )
   }

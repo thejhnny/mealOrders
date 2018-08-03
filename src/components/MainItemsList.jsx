@@ -1,10 +1,96 @@
-import React, {Component} from 'react';
-
-class MainItemsList extends Component{
+import React, { Component } from 'react';
+import AppContext from '../AppContext.jsx';
+class MainItemsList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      items: [
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        },
+        {
+          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+        }
+      ]
+    };
+  }
   render() {
-    return(
-      <div>MAIN ITEMS WILL GO HERE</div>
-    )
+    return (
+      <div>
+        {this.state.items.map((item, index) => {
+          return (
+            <div className="item" index={index} key={index}>
+              <img src={item.image_url} alt="" />
+              <p>
+                Main Item {index + 1} - Price {index + 1}
+              </p>
+              <AppContext.Consumer>
+              {(context) => 
+                <div>
+                <p>{context.state.cart}</p>
+                <button onClick={context.state.log}>CLICK HERE</button>
+                </div>
+                }
+              </AppContext.Consumer>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
 
