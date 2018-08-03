@@ -5,7 +5,7 @@ import MainItemsList from './components/MainItemsList.jsx';
 import SideItemsList from './components/SideItemsList.jsx';
 import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, HashRouter, Route, Switch, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor(){
@@ -21,7 +21,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">You Jean Cooks</h1>
         </header>
-        <Router>
+        <HashRouter>
           <div>
             <ul>
               <li>
@@ -45,7 +45,7 @@ class App extends Component {
             <Route path="/cart" component={Cart} />
             </Switch>
           </div>
-        </Router>
+        </HashRouter>
       </div>
     );
   }

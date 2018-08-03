@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class SideItemsList extends Component{
   render() {
     return(
-      <div>HELLO FROM SIDE ITEMS LIST</div>
+      <div>SIDES WILL GO HERE</div>
     )
   }
 }
