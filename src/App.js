@@ -5,9 +5,15 @@ import MainItemsList from './components/MainItemsList.jsx';
 import SideItemsList from './components/SideItemsList.jsx';
 import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      cart: []
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -31,11 +37,13 @@ class App extends Component {
                 <Link to="/cart">Cart</Link>
               </li>
             </ul>
-            <hr />
+            {/* <hr /> */}
+            <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/mainitems" component={MainItemsList} />
             <Route path="/sideitems" component={SideItemsList} />
             <Route path="/cart" component={Cart} />
+            </Switch>
           </div>
         </Router>
       </div>
