@@ -81,8 +81,8 @@ class MainItemsList extends Component {
               <AppContext.Consumer>
               {(context) => 
                 <div>
-                <p>{context.state.cart}</p>
-                <button onClick={context.state.log}>CLICK HERE</button>
+                <button onClick={() => {context.state.addMainToPending(item)} }>ADD TO CART</button>
+                <button onClick={context.state.addItemsToCart}>Add to Cart</button>
                 </div>
                 }
               </AppContext.Consumer>

@@ -81,7 +81,8 @@ class SideItemsList extends Component{
               <AppContext.Consumer>
               {(context) => 
                 <div>
-                <button onClick={context.state.addToCart}>ADD TO CART</button>
+                <button onClick={() => {context.state.addSideToPending(item)} }>ADD TO CART</button>
+                <button onClick={context.state.addItemsToCart}>Add to Cart</button>
                 </div>
                 }
               </AppContext.Consumer>
