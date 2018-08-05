@@ -48,9 +48,12 @@ li {
   padding-bottom: 30px;
 }
 
-.item{
-  height: 250px;
-  width: 250px;
+div .item{
   float:left;
   padding: 10px 10px 100px 10px;
+}
+
+img .item{
+  height: 250px;
+  width: 250px;
 }

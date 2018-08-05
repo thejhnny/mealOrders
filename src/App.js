@@ -26,8 +26,6 @@ class App extends Component {
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">You Jean Cooks</h1>
-            {/* <AppContext.Consumer>
-            </AppContext.Consumer> */}
           </header>
           <HashRouter>
             <div>

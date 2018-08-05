@@ -6,65 +6,29 @@ class MainItemsList extends Component {
     this.state = {
       items: [
         {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+          name: 'Steak',
+          image_url:
+            'https://hips.hearstapps.com/del.h-cdn.co/assets/18/08/1519155106-flank-steak-horizontal.jpg',
+          price: '$8.50'
         },
         {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+          name: 'Chicken Breast',
+          image_url:
+            'https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2Frecipes%2Fchicken-breast-oh-1904976-x.jpg%3Fitok%3DzjNMQgBp&w=700&q=85',
+          price: '$6.50'
         },
         {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+          name: 'Salmon',
+          image_url:
+            'https://www.onceuponachef.com/images/2018/02/pan-seared-salmon--1024x843.jpg',
+          price: '$9.50'
         },
         {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
+          name: 'Shrimp',
+          image_url:
+            'https://www.inspiredtaste.net/wp-content/uploads/2011/10/Baked-Chili-Shrimp-Recipe-3-1200.jpg',
+          price: '$7.50'
         },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        },
-        {
-          image_url: 'http://dummyimage.com/250x250.jpg/5fa2dd/ffffff'
-        }
       ]
     };
   }
@@ -74,17 +38,29 @@ class MainItemsList extends Component {
         {this.state.items.map((item, index) => {
           return (
             <div className="item" index={index} key={index}>
-              <img src={item.image_url} alt="" />
+              <img
+                style={{ width: '250px', height: '250px' }}
+                src={item.image_url}
+                alt=""
+              />
               <p>
-                Main Item {index + 1} - Price {index + 1}
+                {item.name} - {item.price}
               </p>
               <AppContext.Consumer>
-              {(context) => 
-                <div>
-                <button onClick={() => {context.state.addMainToPending(item)} }>ADD TO CART</button>
-                <button onClick={context.state.addItemsToCart}>Add to Cart</button>
-                </div>
-                }
+                {context => (
+                  <div>
+                    <button
+                      onClick={() => {
+                        context.state.addMainToPending(item);
+                      }}
+                    >
+                      ADD TO ORDER
+                    </button>
+                    <button onClick={context.state.addItemsToCart}>
+                      Add to Cart
+                    </button>
+                  </div>
+                )}
               </AppContext.Consumer>
             </div>
           );

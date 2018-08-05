@@ -9,13 +9,11 @@ class AppProvider extends Component {
       let temp = this.state.pending;
       temp.main = item;
       await this.setState({pending: temp})
-      console.log('CART HERE ', this.state.pending)
     },
     addSideToPending: async (item)=> {
       let temp = this.state.pending;
       temp.side = item;
       await this.setState({pending: temp})
-      console.log('CART HERE ', this.state.pending)
     },
     addItemsToCart: async () => {
       if(!this.state.pending.main){
@@ -24,10 +22,16 @@ class AppProvider extends Component {
         alert('Choose a side dish')
       }else{
         await this.setState({cart: [...this.state.cart, this.state.pending]});
-        console.log(this.state.cart);
         this.setState({pending: {main: null, side: null}})
         
       }
+    },
+    editItemInCart: async (item) => {
+      console.log('reaches here')
+      await this.setState({pending: {
+        main: item.main,
+        side: item.side
+      }})
     }
   }
 
