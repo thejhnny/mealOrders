@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './images/logo.svg';
+import logo from './images/logo.jpeg';
 import './App.css';
-import MainItemsList from './components/MainItemsList.jsx';
-import SideItemsList from './components/SideItemsList.jsx';
+import Menu from './components/Menu.jsx';
 import Cart from './components/Cart.jsx';
 import Home from './components/Home.jsx';
 import {
@@ -34,10 +33,7 @@ class App extends Component {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/mainitems">Main Items</Link>
-                </li>
-                <li>
-                  <Link to="/sideitems">Side Items</Link>
+                  <Link to="/Menu">Menu</Link>
                 </li>
                 <li>
                   <Link to="/cart">Cart</Link>
@@ -46,8 +42,7 @@ class App extends Component {
               {/* <hr /> */}
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/mainitems" component={MainItemsList} />
-                <Route path="/sideitems" component={SideItemsList} />
+                <Route path="/menu" component={Menu} />
                 <Route path="/cart" component={Cart} />
               </Switch>
             </div>

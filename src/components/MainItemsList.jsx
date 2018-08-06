@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppContext from '../AppContext.jsx';
+import ListItem from './ListItem.jsx';
 class MainItemsList extends Component {
   constructor() {
     super();
@@ -37,32 +38,7 @@ class MainItemsList extends Component {
       <div>
         {this.state.items.map((item, index) => {
           return (
-            <div className="item" index={index} key={index}>
-              <img
-                style={{ width: '250px', height: '250px' }}
-                src={item.image_url}
-                alt=""
-              />
-              <p>
-                {item.name} - {item.price}
-              </p>
-              <AppContext.Consumer>
-                {context => (
-                  <div>
-                    <button
-                      onClick={() => {
-                        context.state.addMainToPending(item);
-                      }}
-                    >
-                      ADD TO ORDER
-                    </button>
-                    <button onClick={context.state.addItemsToCart}>
-                      Add to Cart
-                    </button>
-                  </div>
-                )}
-              </AppContext.Consumer>
-            </div>
+            <ListItem key={index} item={item} index={index}/>
           );
         })}
       </div>
