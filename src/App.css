@@ -59,3 +59,19 @@ img .item {
   height: 250px;
   width: 250px;
 }
+
+div .order {
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+}
+
+img .order {
+  width: 250px;
+  height: 250px;
+}
+
+.cart {
+  display: inline-block;
+  padding: 20px;
+}

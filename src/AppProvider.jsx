@@ -4,39 +4,38 @@ import AppContext from './AppContext.jsx';
 class AppProvider extends Component {
   state = {
     cart: [],
-    pending: {main: null, side: null},
-    addMainToPending: async (item)=> {
-      let temp = this.state.pending;
-      temp.main = item;
-      await this.setState({pending: temp})
+    totalPrice: 0,
+    addItemsToCart: async (main, mainPrice, side, sidePrice, amount) => {
+      await this.setState({
+        cart: [
+          ...this.state.cart,
+          {
+            main: main,
+            side: side,
+            amount: amount,
+            price: (Number(mainPrice) +Number(sidePrice))*Number(amount)
+          }
+        ],
+        totalPrice: this.state.totalPrice + (Number(mainPrice) +Number(sidePrice))*Number(amount)
+      });
     },
-    addSideToPending: async (item)=> {
-      let temp = this.state.pending;
-      temp.side = item;
-      await this.setState({pending: temp})
-    },
-    addItemsToCart: async () => {
-      if(!this.state.pending.main){
-        alert('Choose a main dish!')
-      }else if(!this.state.pending.side){
-        alert('Choose a side dish')
-      }else{
-        await this.setState({cart: [...this.state.cart, this.state.pending]});
-        this.setState({pending: {main: null, side: null}})
-        
-      }
-    },
-    editItemInCart: async (item) => {
-      console.log('reaches here')
-      await this.setState({pending: {
-        main: item.main,
-        side: item.side
-      }})
+    deleteItemFromCart:  async (index) => {
+      let temp = this.state.cart;
+      let tempPrice = this.state.cart[index].price;
+      temp.splice(index, 1);
+      await this.setState({cart: temp,
+        totalPrice: this.state.totalPrice - tempPrice
+      });
+      console.log('CART AFTER DELETING ', this.state.cart)
     }
-  }
+  };
 
   render() {
-    return <AppContext.Provider value={{state: this.state}}>{this.props.children}</AppContext.Provider>;
+    return (
+      <AppContext.Provider value={{ state: this.state }}>
+        {this.props.children}
+      </AppContext.Provider>
+    );
   }
 }
 

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Steak",
+    "image_url":
+      "https://hips.hearstapps.com/del.h-cdn.co/assets/18/08/1519155106-flank-steak-horizontal.jpg",
+    "price": 8.50
+  },
+  {
+    "name": "Chicken Breast",
+    "image_url":
+      "https://imagesvc.timeincapp.com/v3/mm/image?url=http%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2Frecipes%2Fchicken-breast-oh-1904976-x.jpg%3Fitok%3DzjNMQgBp&w=700&q=85",
+    "price": 6.50
+  },
+  {
+    "name": "Salmon",
+    "image_url":
+      "https://www.onceuponachef.com/images/2018/02/pan-seared-salmon--1024x843.jpg",
+    "price": 9.50
+  },
+  {
+    "name": "Shrimp",
+    "image_url":
+      "https://www.inspiredtaste.net/wp-content/uploads/2011/10/Baked-Chili-Shrimp-Recipe-3-1200.jpg",
+    "price": 7.50
+  }
+]

@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import AppContext from '../AppContext.jsx';
 
 class ListItem extends Component {
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
       <div className="item">
@@ -14,24 +10,8 @@ class ListItem extends Component {
                 alt=""
               />
               <p>
-                {this.props.item.name} - {this.props.item.price}
+                {this.props.item.name} - ${this.props.item.price}
               </p>
-              <AppContext.Consumer>
-                {context => (
-                  <div>
-                    <button
-                      onClick={() => {
-                        context.state.addSideToPending(this.props.item);
-                      }}
-                    >
-                      ADD TO ORDER
-                    </button>
-                    <button onClick={context.state.addItemsToCart}>
-                      Add to Cart
-                    </button>
-                  </div>
-                )}
-              </AppContext.Consumer>
             </div>
     )
   }

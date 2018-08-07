@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AppContext from '../AppContext.jsx';
 import MainItemsList from './MainItemsList.jsx';
 import SideItemsList from './SideItemsList.jsx';
 
